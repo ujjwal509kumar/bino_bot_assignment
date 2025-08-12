@@ -1,36 +1,378 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dynamic Page Generator API
 
-## Getting Started
+Create pages with single or multiple components using POST requests.
 
-First, run the development server:
+## API Endpoint
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**POST** `/api/pages`
+
+**Headers**: `Content-Type: application/json`
+
+**Body Structure**:
+```json
+{
+  "slug": "unique-page-name",
+  "title": "Page Title",
+  "description": "Page description",
+  "components": [
+    {
+      "type": "ComponentType",
+      "props": { /* component properties */ }
+    }
+  ]
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Single Component Examples
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Text Section
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Curl:**
+```bash
+curl -X POST http://localhost:3000/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "text-example",
+    "title": "Text Page",
+    "description": "Simple text content",
+    "components": [
+      {
+        "type": "TextSection",
+        "props": {
+          "heading": "Welcome",
+          "content": "This is a text section.",
+          "alignment": "center"
+        }
+      }
+    ]
+  }'
+```
 
-## Learn More
+**Postman:**
+- Method: `POST`
+- URL: `http://localhost:3000/api/pages`
+- Headers: `Content-Type: application/json`
+- Body (raw JSON):
+```json
+{
+  "slug": "text-example",
+  "title": "Text Page",
+  "description": "Simple text content",
+  "components": [
+    {
+      "type": "TextSection",
+      "props": {
+        "heading": "Welcome",
+        "content": "This is a text section.",
+        "alignment": "center"
+      }
+    }
+  ]
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Image Block
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Curl:**
+```bash
+curl -X POST http://localhost:3000/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "image-example",
+    "title": "Image Page",
+    "description": "Image showcase",
+    "components": [
+      {
+        "type": "ImageBlock",
+        "props": {
+          "src": "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=400",
+          "alt": "Example image",
+          "width": 800,
+          "height": 400,
+          "caption": "Image caption"
+        }
+      }
+    ]
+  }'
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Postman Body:**
+```json
+{
+  "slug": "image-example",
+  "title": "Image Page",
+  "description": "Image showcase",
+  "components": [
+    {
+      "type": "ImageBlock",
+      "props": {
+        "src": "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=400",
+        "alt": "Example image",
+        "width": 800,
+        "height": 400,
+        "caption": "Image caption"
+      }
+    }
+  ]
+}
+```
 
-## Deploy on Vercel
+### Stats Box
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Curl:**
+```bash
+curl -X POST http://localhost:3000/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "stats-example",
+    "title": "Stats Page",
+    "description": "Statistics display",
+    "components": [
+      {
+        "type": "StatsBox",
+        "props": {
+          "stats": [
+            {
+              "label": "Users",
+              "value": "1000+",
+              "icon": "users",
+              "change": "+20%",
+              "description": "Active users"
+            }
+          ]
+        }
+      }
+    ]
+  }'
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Postman Body:**
+```json
+{
+  "slug": "stats-example",
+  "title": "Stats Page",
+  "description": "Statistics display",
+  "components": [
+    {
+      "type": "StatsBox",
+      "props": {
+        "stats": [
+          {
+            "label": "Users",
+            "value": "1000+",
+            "icon": "users",
+            "change": "+20%",
+            "description": "Active users"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+### Card
+
+**Curl:**
+```bash
+curl -X POST http://localhost:3000/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "card-example",
+    "title": "Card Page",
+    "description": "Card component",
+    "components": [
+      {
+        "type": "Card",
+        "props": {
+          "title": "Feature Title",
+          "content": "Feature description goes here.",
+          "variant": "default"
+        }
+      }
+    ]
+  }'
+```
+
+**Postman Body:**
+```json
+{
+  "slug": "card-example",
+  "title": "Card Page",
+  "description": "Card component",
+  "components": [
+    {
+      "type": "Card",
+      "props": {
+        "title": "Feature Title",
+        "content": "Feature description goes here.",
+        "variant": "default"
+      }
+    }
+  ]
+}
+```
+
+### Call to Action
+
+**Curl:**
+```bash
+curl -X POST http://localhost:3000/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "cta-example",
+    "title": "CTA Page",
+    "description": "Call to action",
+    "components": [
+      {
+        "type": "CTA",
+        "props": {
+          "text": "Click Here",
+          "href": "https://example.com",
+          "variant": "primary",
+          "size": "large"
+        }
+      }
+    ]
+  }'
+```
+
+**Postman Body:**
+```json
+{
+  "slug": "cta-example",
+  "title": "CTA Page",
+  "description": "Call to action",
+  "components": [
+    {
+      "type": "CTA",
+      "props": {
+        "text": "Click Here",
+        "href": "https://example.com",
+        "variant": "primary",
+        "size": "large"
+      }
+    }
+  ]
+}
+```
+
+## Multiple Components Example
+
+**Curl:**
+```bash
+curl -X POST http://localhost:3000/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "multi-example",
+    "title": "Multi Component Page",
+    "description": "Page with multiple components",
+    "components": [
+      {
+        "type": "TextSection",
+        "props": {
+          "heading": "Main Title",
+          "content": "Introduction text",
+          "alignment": "center"
+        }
+      },
+      {
+        "type": "Card",
+        "props": {
+          "title": "Feature 1",
+          "content": "First feature description",
+          "variant": "outlined"
+        }
+      },
+      {
+        "type": "StatsBox",
+        "props": {
+          "stats": [
+            {
+              "label": "Metric 1",
+              "value": "100%",
+              "icon": "trending"
+            },
+            {
+              "label": "Metric 2", 
+              "value": "50+",
+              "icon": "users"
+            }
+          ]
+        }
+      },
+      {
+        "type": "CTA",
+        "props": {
+          "text": "Get Started",
+          "href": "https://example.com",
+          "variant": "primary"
+        }
+      }
+    ]
+  }'
+```
+
+**Postman Body:**
+```json
+{
+  "slug": "multi-example",
+  "title": "Multi Component Page",
+  "description": "Page with multiple components",
+  "components": [
+    {
+      "type": "TextSection",
+      "props": {
+        "heading": "Main Title",
+        "content": "Introduction text",
+        "alignment": "center"
+      }
+    },
+    {
+      "type": "Card",
+      "props": {
+        "title": "Feature 1",
+        "content": "First feature description",
+        "variant": "outlined"
+      }
+    },
+    {
+      "type": "StatsBox",
+      "props": {
+        "stats": [
+          {
+            "label": "Metric 1",
+            "value": "100%",
+            "icon": "trending"
+          },
+          {
+            "label": "Metric 2", 
+            "value": "50+",
+            "icon": "users"
+          }
+        ]
+      }
+    },
+    {
+      "type": "CTA",
+      "props": {
+        "text": "Get Started",
+        "href": "https://example.com",
+        "variant": "primary"
+      }
+    }
+  ]
+}
+```
+
+## Component Types
+
+**Card**: `title`, `content`, `variant` (default|outlined|elevated)
+
+**ImageBlock**: `src`, `alt`, `width`, `height`, `caption`
+
+**TextSection**: `heading`, `content`, `alignment` (left|center|right)
+
+**StatsBox**: `stats` array with `label`, `value`, `icon`, `change`, `description`
+
+**CTA**: `text`, `href`, `variant` (primary|secondary|outline), `size` (small|medium|large)
