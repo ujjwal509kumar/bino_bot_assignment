@@ -40,9 +40,9 @@ export default function NotFound() {
                     {/* Description */}
                     <div className="animate-in fade-in-50 duration-700 delay-200">
                         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
-                            The page you're looking for doesn't exist or may have been moved.
+                            The page you&#39;re looking for doesn&#39;t exist or may have been moved.
                             <br />
-                            <span className="text-primary font-medium">Let's get you back on track!</span>
+                            <span className="text-primary font-medium">Let&#39;s get you back on track!</span>
                         </p>
                     </div>
 
