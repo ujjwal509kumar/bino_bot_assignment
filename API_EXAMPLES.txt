@@ -1,0 +1,426 @@
+DYNAMIC PAGE GENERATOR API EXAMPLES
+=====================================
+
+API ENDPOINT: POST /api/pages
+BASE URL: https://bino-bot-assignment.vercel.app
+HEADERS: Content-Type: application/json
+
+=====================================
+SINGLE COMPONENT EXAMPLES
+=====================================
+
+1. TEXT SECTION
+---------------
+
+CURL:
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "text-example",
+    "title": "Text Page",
+    "description": "Simple text content",
+    "components": [
+      {
+        "type": "TextSection",
+        "props": {
+          "heading": "Welcome",
+          "content": "This is a text section.",
+          "alignment": "center"
+        }
+      }
+    ]
+  }'
+
+POSTMAN:
+Method: POST
+URL: https://bino-bot-assignment.vercel.app/api/pages
+Headers: Content-Type: application/json
+Body (raw JSON):
+{
+  "slug": "text-example",
+  "title": "Text Page",
+  "description": "Simple text content",
+  "components": [
+    {
+      "type": "TextSection",
+      "props": {
+        "heading": "Welcome",
+        "content": "This is a text section.",
+        "alignment": "center"
+      }
+    }
+  ]
+}
+
+2. IMAGE BLOCK
+--------------
+
+CURL:
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "image-example",
+    "title": "Image Page",
+    "description": "Image showcase",
+    "components": [
+      {
+        "type": "ImageBlock",
+        "props": {
+          "src": "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=400",
+          "alt": "Example image",
+          "width": 800,
+          "height": 400,
+          "caption": "Image caption"
+        }
+      }
+    ]
+  }'
+
+POSTMAN:
+Method: POST
+URL: https://bino-bot-assignment.vercel.app/api/pages
+Headers: Content-Type: application/json
+Body (raw JSON):
+{
+  "slug": "image-example",
+  "title": "Image Page",
+  "description": "Image showcase",
+  "components": [
+    {
+      "type": "ImageBlock",
+      "props": {
+        "src": "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=400",
+        "alt": "Example image",
+        "width": 800,
+        "height": 400,
+        "caption": "Image caption"
+      }
+    }
+  ]
+}
+
+3. STATS BOX
+------------
+
+CURL:
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "stats-example",
+    "title": "Stats Page",
+    "description": "Statistics display",
+    "components": [
+      {
+        "type": "StatsBox",
+        "props": {
+          "stats": [
+            {
+              "label": "Users",
+              "value": "1000+",
+              "icon": "users",
+              "change": "+20%",
+              "description": "Active users"
+            }
+          ]
+        }
+      }
+    ]
+  }'
+
+POSTMAN:
+Method: POST
+URL: https://bino-bot-assignment.vercel.app/api/pages
+Headers: Content-Type: application/json
+Body (raw JSON):
+{
+  "slug": "stats-example",
+  "title": "Stats Page",
+  "description": "Statistics display",
+  "components": [
+    {
+      "type": "StatsBox",
+      "props": {
+        "stats": [
+          {
+            "label": "Users",
+            "value": "1000+",
+            "icon": "users",
+            "change": "+20%",
+            "description": "Active users"
+          }
+        ]
+      }
+    }
+  ]
+}
+
+4. CARD
+-------
+
+CURL:
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "card-example",
+    "title": "Card Page",
+    "description": "Card component",
+    "components": [
+      {
+        "type": "Card",
+        "props": {
+          "title": "Feature Title",
+          "content": "Feature description goes here.",
+          "variant": "default"
+        }
+      }
+    ]
+  }'
+
+POSTMAN:
+Method: POST
+URL: https://bino-bot-assignment.vercel.app/api/pages
+Headers: Content-Type: application/json
+Body (raw JSON):
+{
+  "slug": "card-example",
+  "title": "Card Page",
+  "description": "Card component",
+  "components": [
+    {
+      "type": "Card",
+      "props": {
+        "title": "Feature Title",
+        "content": "Feature description goes here.",
+        "variant": "default"
+      }
+    }
+  ]
+}
+
+5. CALL TO ACTION
+-----------------
+
+CURL:
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "cta-example",
+    "title": "CTA Page",
+    "description": "Call to action",
+    "components": [
+      {
+        "type": "CTA",
+        "props": {
+          "text": "Click Here",
+          "href": "https://example.com",
+          "variant": "primary",
+          "size": "large"
+        }
+      }
+    ]
+  }'
+
+POSTMAN:
+Method: POST
+URL: https://bino-bot-assignment.vercel.app/api/pages
+Headers: Content-Type: application/json
+Body (raw JSON):
+{
+  "slug": "cta-example",
+  "title": "CTA Page",
+  "description": "Call to action",
+  "components": [
+    {
+      "type": "CTA",
+      "props": {
+        "text": "Click Here",
+        "href": "https://example.com",
+        "variant": "primary",
+        "size": "large"
+      }
+    }
+  ]
+}
+
+=====================================
+MULTIPLE COMPONENTS EXAMPLE
+=====================================
+
+CURL:
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "slug": "multi-example",
+    "title": "Multi Component Page",
+    "description": "Page with multiple components",
+    "components": [
+      {
+        "type": "TextSection",
+        "props": {
+          "heading": "Main Title",
+          "content": "Introduction text",
+          "alignment": "center"
+        }
+      },
+      {
+        "type": "Card",
+        "props": {
+          "title": "Feature 1",
+          "content": "First feature description",
+          "variant": "outlined"
+        }
+      },
+      {
+        "type": "StatsBox",
+        "props": {
+          "stats": [
+            {
+              "label": "Metric 1",
+              "value": "100%",
+              "icon": "trending"
+            },
+            {
+              "label": "Metric 2", 
+              "value": "50+",
+              "icon": "users"
+            }
+          ]
+        }
+      },
+      {
+        "type": "CTA",
+        "props": {
+          "text": "Get Started",
+          "href": "https://example.com",
+          "variant": "primary"
+        }
+      }
+    ]
+  }'
+
+POSTMAN:
+Method: POST
+URL: https://bino-bot-assignment.vercel.app/api/pages
+Headers: Content-Type: application/json
+Body (raw JSON):
+{
+  "slug": "multi-example",
+  "title": "Multi Component Page",
+  "description": "Page with multiple components",
+  "components": [
+    {
+      "type": "TextSection",
+      "props": {
+        "heading": "Main Title",
+        "content": "Introduction text",
+        "alignment": "center"
+      }
+    },
+    {
+      "type": "Card",
+      "props": {
+        "title": "Feature 1",
+        "content": "First feature description",
+        "variant": "outlined"
+      }
+    },
+    {
+      "type": "StatsBox",
+      "props": {
+        "stats": [
+          {
+            "label": "Metric 1",
+            "value": "100%",
+            "icon": "trending"
+          },
+          {
+            "label": "Metric 2", 
+            "value": "50+",
+            "icon": "users"
+          }
+        ]
+      }
+    },
+    {
+      "type": "CTA",
+      "props": {
+        "text": "Get Started",
+        "href": "https://example.com",
+        "variant": "primary"
+      }
+    }
+  ]
+}
+
+=====================================
+COMPONENT PROPERTIES REFERENCE
+=====================================
+
+Card: title, content, variant (default|outlined|elevated)
+ImageBlock: src, alt, width, height, caption
+TextSection: heading, content, alignment (left|center|right)
+StatsBox: stats array with label, value, icon, change, description
+CTA: text, href, variant (primary|secondary|outline), size (small|medium|large)
+
+=====================================
+POSTMAN SETUP INSTRUCTIONS
+=====================================
+
+STEP-BY-STEP POSTMAN SETUP:
+
+1. OPEN POSTMAN
+   - Download from https://postman.com if not installed
+   - Launch the application
+
+2. CREATE NEW REQUEST
+   - Click "New" button
+   - Select "HTTP Request"
+
+3. CONFIGURE REQUEST METHOD
+   - Change dropdown from "GET" to "POST"
+
+4. ENTER API URL
+   - URL field: https://bino-bot-assignment.vercel.app/api/pages
+
+5. SET HEADERS
+   - Click "Headers" tab below URL
+   - Add new header:
+     Key: Content-Type
+     Value: application/json
+
+6. CONFIGURE REQUEST BODY
+   - Click "Body" tab
+   - Select "raw" radio button
+   - Change dropdown from "Text" to "JSON"
+   - Copy any JSON example from above sections
+   - Paste into the text area
+
+7. SEND REQUEST
+   - Click blue "Send" button
+   - View response in bottom panel
+
+8. CHECK RESPONSE
+   - Success: Status 200/201 with page URL
+   - Error: Status 400+ with error details
+
+=====================================
+CURL TO POSTMAN IMPORT
+=====================================
+
+IMPORT CURL INTO POSTMAN:
+1. Open Postman
+2. Click "Import" button (top left)
+3. Select "Raw text" tab
+4. Copy any complete curl command from above examples
+5. Paste the entire curl command into the text area
+6. Click "Continue" button
+7. Click "Import" button
+8. The request will be automatically configured with:
+   - Method: POST
+   - URL: https://bino-bot-assignment.vercel.app/api/pages
+   - Headers: Content-Type: application/json
+   - Body: JSON data
+9. Click "Send" to execute the request
+
+NOTE: Copy the entire curl command including all lines with backslashes (\)
+
