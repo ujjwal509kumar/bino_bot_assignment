@@ -93,7 +93,7 @@ export default function PageGeneratorForm() {
                 ];
             case 'ImageBlock':
                 return [
-                    { key: 'src', label: 'Image URL (use only unsplash.com)', type: 'text', placeholder: 'https://example.com/image.jpg' },
+                    { key: 'src', label: 'Image URL (use only unsplash.com)', type: 'text', placeholder: 'https://unsplash.com/image.jpg' },
                     { key: 'alt', label: 'Alt Text', type: 'text', placeholder: 'Image description' },
                     { key: 'width', label: 'Width', type: 'number', placeholder: '800' },
                     { key: 'height', label: 'Height', type: 'number', placeholder: '400' },
@@ -102,7 +102,7 @@ export default function PageGeneratorForm() {
             case 'CTA':
                 return [
                     { key: 'text', label: 'Button Text', type: 'text', placeholder: 'Click Me' },
-                    { key: 'href', label: 'Link URL', type: 'text', placeholder: 'https://example.com' },
+                    { key: 'href', label: 'Link URL', type: 'text', placeholder: 'https://bino.bot.com' },
                     { key: 'variant', label: 'Variant', type: 'select', options: ['primary', 'secondary', 'outline'] },
                     { key: 'size', label: 'Size', type: 'select', options: ['small', 'medium', 'large'] }
                 ];
