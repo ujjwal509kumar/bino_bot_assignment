@@ -309,7 +309,7 @@ export default function Home() {
                       Postman Setup Guide
                     </CardTitle>
                     <CardDescription className="text-orange-700 dark:text-orange-300">
-                      Quick setup for testing our API
+                      Quick setup for Postman POST API
                     </CardDescription>
                   </div>
                 </div>
