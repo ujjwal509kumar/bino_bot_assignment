@@ -235,7 +235,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <CodeBlock className="bg-background" language="bash">
-                  {`curl -X POST http://localhost:3000/api/pages \\
+                  {`curl -X POST https://bino-bot-assignment.vercel.app/api/pages \\
   -H "Content-Type: application/json" \\
   -d '{
     "slug": "my-page",
@@ -351,10 +351,10 @@ export default function Home() {
                       <div className="bg-orange-100 dark:bg-orange-900/50 rounded-md p-3 border border-orange-200 dark:border-orange-800">
                         <div className="flex items-center justify-between gap-2">
                           <code className="bg-orange-200 dark:bg-orange-800 px-3 py-2 rounded font-mono text-sm text-orange-900 dark:text-orange-100 select-all flex-1 min-w-0 overflow-x-auto">
-                            http://localhost:3000/api/pages
+                            https://bino-bot-assignment.vercel.app/api/pages
                           </code>
                           <CopyButton
-                            text="http://localhost:3000/api/pages"
+                            text="https://bino-bot-assignment.vercel.app/api/pages"
                             className="text-orange-600 dark:text-orange-400 hover:bg-orange-200 dark:hover:bg-orange-800 flex-shrink-0"
                           />
                         </div>
