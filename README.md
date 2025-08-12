@@ -29,7 +29,7 @@ Create pages with single or multiple components using POST requests.
 
 **Curl:**
 ```bash
-curl -X POST http://localhost:3000/api/pages \
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
   -H "Content-Type: application/json" \
   -d '{
     "slug": "text-example",
@@ -50,7 +50,7 @@ curl -X POST http://localhost:3000/api/pages \
 
 **Postman:**
 - Method: `POST`
-- URL: `http://localhost:3000/api/pages`
+- URL: `https://bino-bot-assignment.vercel.app/api/pages`
 - Headers: `Content-Type: application/json`
 - Body (raw JSON):
 ```json
@@ -75,7 +75,7 @@ curl -X POST http://localhost:3000/api/pages \
 
 **Curl:**
 ```bash
-curl -X POST http://localhost:3000/api/pages \
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
   -H "Content-Type: application/json" \
   -d '{
     "slug": "image-example",
@@ -121,7 +121,7 @@ curl -X POST http://localhost:3000/api/pages \
 
 **Curl:**
 ```bash
-curl -X POST http://localhost:3000/api/pages \
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
   -H "Content-Type: application/json" \
   -d '{
     "slug": "stats-example",
@@ -175,7 +175,7 @@ curl -X POST http://localhost:3000/api/pages \
 
 **Curl:**
 ```bash
-curl -X POST http://localhost:3000/api/pages \
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
   -H "Content-Type: application/json" \
   -d '{
     "slug": "card-example",
@@ -217,7 +217,7 @@ curl -X POST http://localhost:3000/api/pages \
 
 **Curl:**
 ```bash
-curl -X POST http://localhost:3000/api/pages \
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
   -H "Content-Type: application/json" \
   -d '{
     "slug": "cta-example",
@@ -261,7 +261,7 @@ curl -X POST http://localhost:3000/api/pages \
 
 **Curl:**
 ```bash
-curl -X POST http://localhost:3000/api/pages \
+curl -X POST https://bino-bot-assignment.vercel.app/api/pages \
   -H "Content-Type: application/json" \
   -d '{
     "slug": "multi-example",
