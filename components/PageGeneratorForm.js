@@ -93,7 +93,7 @@ export default function PageGeneratorForm() {
                 ];
             case 'ImageBlock':
                 return [
-                    { key: 'src', label: 'Image URL', type: 'text', placeholder: 'https://example.com/image.jpg' },
+                    { key: 'src', label: 'Image URL (use only unsplash.com)', type: 'text', placeholder: 'https://example.com/image.jpg' },
                     { key: 'alt', label: 'Alt Text', type: 'text', placeholder: 'Image description' },
                     { key: 'width', label: 'Width', type: 'number', placeholder: '800' },
                     { key: 'height', label: 'Height', type: 'number', placeholder: '400' },
