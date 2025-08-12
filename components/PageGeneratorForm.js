@@ -310,7 +310,7 @@ export default function PageGeneratorForm() {
                         {formData.components.length === 0 && (
                             <Card className="border-dashed">
                                 <CardContent className="flex items-center justify-center py-8">
-                                    <p className="text-muted-foreground">No components added yet. Click "Add Component" to get started.</p>
+                                    <p className="text-muted-foreground">No components added yet. Click &quot;Add Component&quot; to get started.</p>
                                 </CardContent>
                             </Card>
                         )}
