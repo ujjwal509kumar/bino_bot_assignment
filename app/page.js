@@ -641,7 +641,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="relative z-10">
                 <Button asChild className="w-full gap-2 group-hover:bg-primary/90 transition-colors">
-                  <Link href="/bino-bot-campaign">
+                  <Link href="/bino-bot-platform">
                     View Live Demo
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
